@@ -18,7 +18,6 @@ Ensure your system meets the following requirements before installation:
 
 * **PHP:** Version `^8.1` or higher
 * **Composer:** Installed globally
-* **Database:** MySQL / MariaDB
 * **PHP Extensions:** `ext-zip`, `ext-xml`, `ext-gd`, `ext-mbstring` (required by PhpSpreadsheet)
 
 ---
