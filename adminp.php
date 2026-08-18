@@ -39,7 +39,7 @@ if($_SESSION['nimda']=="ko"){
       <div class="h-5 w-px bg-slate-200"></div>
 
       <!-- Logout Button (HTMX) -->
-      <button hx-post="/admin/auth/logout.php"
+      <button hx-post="admin-logout.php"
               hx-confirm="Are you sure you want to log out?"
               title="Sign Out"
               class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-red-50 text-slate-600 hover:text-red-600 text-xs font-bold transition-all cursor-pointer">
@@ -57,7 +57,7 @@ if($_SESSION['nimda']=="ko"){
 <div id="modal-container" class="relative z-100"></div>
 <?php
 }
-if($for=="myadmin"){
+if($for=="myadmin" and !isset($_SESSION['nimda'])){
 ?>
 <!-- HTMX ADMIN LOGIN MODAL OVERLAY -->
 <div id="admin-login-modal" 

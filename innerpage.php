@@ -41,14 +41,43 @@ $pagehead= "Products";
   <!-- Subcategories Grid (3 cols on MD, 4 cols on XL) -->
   
    <?php
-   if(isset($_SESSION['nimda'])=="ko"){
-    $theme="subcategory_theme_admin";
-   }else{
-    $theme="subcategory_theme";
-   }
+   
    if(file_exists($inv.$page.".xlsx")){
     $readLinks =getls($inv,$page);
     ?><div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6"><?php
+    
+    if(isset($_SESSION['nimda'])=="ko"){
+      $theme="subcategory_theme_admin";
+      ?>
+      <!-- ADD NEW CATEGORY CARD -->
+      <button hx-get="admin-cat-curd.php?gg=add"
+              hx-target="#modal-container"
+              hx-swap="innerHTML"
+              class="group relative block h-64 w-full rounded-2xl border-2 border-dashed border-slate-300 hover:border-orange-500 bg-slate-50/50 hover:bg-orange-50/30 transition-all duration-300 flex flex-col items-center justify-center gap-3 text-center p-6 cursor-pointer">
+        
+        <!-- Animated Plus Icon Container -->
+        <div class="w-12 h-12 rounded-full bg-white group-hover:bg-orange-500 text-slate-600 group-hover:text-white shadow-md flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+          </svg>
+        </div>
+
+        <!-- Text Details -->
+        <div>
+          <span class="block text-sm font-black text-slate-900 group-hover:text-orange-600 uppercase tracking-wider transition-colors">
+            Add New Category
+          </span>
+          <span class="block text-[11px] font-semibold text-slate-400 mt-0.5">
+            Create a new collection card
+          </span>
+        </div>
+
+      </button>
+      <?php
+    }else{
+      $theme="subcategory_theme";
+    }
+    
     echo dataToTemplate(
       $readLinks,
       "templates/".$theme.".html",

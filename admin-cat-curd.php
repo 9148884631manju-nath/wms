@@ -15,8 +15,11 @@
    <?php
      require_once "lib/call.php";
      $gg=isset($_REQUEST['gg']) ? $_REQUEST['gg']:"";
-     $id= $_REQUEST['id'];
+     $id= isset($_REQUEST['id']) ? $_REQUEST['id']:"";
      switch($gg){
+      case "add":
+       echo "Adding Product";
+       break;
       case "save":
         
         $id= $_REQUEST['id'];
@@ -42,7 +45,7 @@
          }else{
           echo $res." - ";
          }
-         
+
         }else{}
         
        break;
