@@ -1,0 +1,33 @@
+<tr id="prod-row-102" class="hover:bg-gray-50/50 transition-all">
+            <td class="p-4">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-lg bg-gray-100 border border-gray-200 overflow-hidden flex-shrink-0">
+                  <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=100&q=80" alt="T-Shirt" class="w-full h-full object-cover">
+                </div>
+                <div>
+                  <h4 class="font-bold text-brand-dark text-sm">Archival Oversized Tee</h4>
+                  <p class="text-xs text-brand-slate line-clamp-1">Vintage washed aesthetic with reinforced collar</p>
+                </div>
+              </div>
+            </td>
+            <td class="p-4 font-black text-brand-dark">$65.00</td>
+            <td class="p-4 text-xs text-brand-slate">280 GSM Organic Cotton</td>
+            <td class="p-4">
+              <span class="px-2.5 py-1 text-[10px] font-bold uppercase rounded-full bg-emerald-50 text-brand-emerald border border-emerald-200">
+                In Stock
+              </span>
+            </td>
+            <td class="p-4 text-right space-x-2">
+              <button onclick="openEditModal(102, 'Archival Oversized Tee', 65.00, 'Vintage washed aesthetic with reinforced collar', '280 GSM Organic Cotton')" 
+                      class="px-3 py-1.5 text-xs font-bold bg-gray-100 hover:bg-gray-200 text-brand-dark rounded-lg transition-all">
+                Edit
+              </button>
+              <button hx-delete="/api/admin/products/102" 
+                      hx-target="#prod-row-102" 
+                      hx-swap="outerHTML" 
+                      hx-confirm="Are you sure you want to delete this product?"
+                      class="px-3 py-1.5 text-xs font-bold bg-red-50 hover:bg-red-100 text-red-600 rounded-lg transition-all">
+                Delete
+              </button>
+            </td>
+          </tr>

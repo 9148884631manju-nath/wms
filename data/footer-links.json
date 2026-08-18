@@ -1,0 +1,38 @@
+[
+ {
+  "title":"Main Links",
+  "links":"data/links.json"
+ },
+ {
+  "title":"Men Accessories",
+  "links":"data/men-accessories-links.json"
+ },
+ {
+  "title":"Men Backpacks",
+  "links":"data/men-backpacks-links.json"
+ },
+ {
+  "title":"Men Bags",
+  "links":"data/men-bags-links.json"
+ },
+ {
+  "title":"Men Eyewear",
+  "links":"data/men-eyewear-links.json"
+ },
+ {
+  "title":"Men Footwear",
+  "links":"data/men-footwear-links.json"
+ },
+ {
+  "title":"Men Sliders",
+  "links":"data/men-sliders-links.json"
+ },
+ {
+  "title":"Unisex",
+  "links":"data/unisex-links.json"
+ },
+ {
+  "title":"Women",
+  "links":"data/women-links.json"
+ }
+]

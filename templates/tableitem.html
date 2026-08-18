@@ -1,0 +1,30 @@
+<tr id="cat-row-301" class="hover:bg-gray-50/50 transition-all">
+  <td class="p-4 font-bold text-brand-dark">
+    Xlink
+  </td>
+  <td class="p-4">
+    <code class="text-xs bg-gray-100 px-2 py-1 rounded text-brand-slate">Xtitle</code>
+  </td>
+  <td class="p-4 font-black text-brand-dark">Xtitle</td>
+  <td class="p-4">
+    <span class="px-2.5 py-1 text-[10px] font-bold uppercase rounded-full bg-emerald-50 text-brand-emerald border border-emerald-200">
+      Active
+    </span>
+  </td>
+  <td class="p-4 text-right space-x-2">
+    <!-- UPDATE Trigger -->
+    <button onclick="openCategoryEditModal(XidTitle, 'XTitle', 'outerwear', 'Active')" 
+            class="px-3 py-1.5 text-xs font-bold bg-gray-100 hover:bg-gray-200 text-brand-dark rounded-lg transition-all">
+      Edit
+    </button>
+    
+    <!-- DELETE Trigger via HTMX -->
+    <button hx-delete="XdelUrl" 
+            hx-target="#cat-row-301" 
+            hx-swap="outerHTML" 
+            hx-confirm="Are you sure you want to delete this category?"
+            class="px-3 py-1.5 text-xs font-bold bg-red-50 hover:bg-red-100 text-red-600 rounded-lg transition-all">
+      Delete
+    </button>
+  </td>
+</tr>

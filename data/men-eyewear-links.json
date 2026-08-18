@@ -1,0 +1,20 @@
+[
+ {
+  "title":"Sun Glasses",
+  "link":"men-sunglasses",
+  "target":"",
+  "class":"men-sunglasses",
+  "name":"men-sunglasses",
+  "link_type":"men-eyewear",
+  "sort":"1"
+ },
+ {
+  "title":"Optical Glasses",
+  "link":"men-opticalglasses",
+  "target":"",
+  "class":"men-opticalglasses",
+  "name":"men-opticalglasses",
+  "link_type":"men-eyewear",
+  "sort":"1"
+ }
+]

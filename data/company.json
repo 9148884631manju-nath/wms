@@ -1,0 +1,16 @@
+[
+ {
+  "comp_name":"Haven & Hue",
+  "comp_logo":"data/res/heaven-n-hue-logo.png",
+  "comp_icon":"data/res/heaven-n-hue-icon.png",
+  "comp_banner":"data/res/heaven-n-hue-banner.png",
+  "comp_address":"No., Road, Cross, Area, Nagar, City - Pincode, State",
+  "comp_email":"info@haveandnhue.com",
+  "comp_mobile":"+91 1234 56789",
+  "comp_phone":"+81 1234 5678",
+  "comp_contact_person":"Contact person",
+  "comp_expose_text":"High-grade urban apparel designed for everyday utility and sleek aesthetics.",
+  "comp_welcome_puch_line":"Redefine Your Everyday Style",
+  "comp_welcome_text":"Minimalist streetwear engineered with premium fabrics. Designed for durability, comfort, and distinction."
+ }
+]

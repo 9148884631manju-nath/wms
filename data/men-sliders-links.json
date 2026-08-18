@@ -1,0 +1,20 @@
+[
+ {
+  "title":"Socks",
+  "link":"men-socks",
+  "target":"",
+  "class":"men-socks",
+  "name":"men-socks",
+  "link_type":"men-sliders",
+  "sort":"1"
+ },
+ {
+  "title":"Stoks",
+  "link":"men-stoks",
+  "target":"",
+  "class":"men-stoks",
+  "name":"men-stoks",
+  "link_type":"men-sliders",
+  "sort":"1"
+ }
+]

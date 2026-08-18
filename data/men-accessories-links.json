@@ -1,0 +1,47 @@
+[
+ {
+  "title":"Belts",
+  "link":"men-belts",
+  "target":"",
+  "class":"men-belts",
+  "name":"men-belts",
+  "link_type":"men-accessories",
+  "sort":"1"
+ },
+ {
+  "title":"Wallets",
+  "link":"men-wallets",
+  "target":"",
+  "class":"men-wallets",
+  "name":"men-wallets",
+  "link_type":"men-accessories",
+  "sort":"1"
+ },
+ {
+  "title":"Money Clips",
+  "link":"men-moneyclips",
+  "target":"",
+  "class":"men-moneyclips",
+  "name":"men-moneyclips",
+  "link_type":"men-accessories",
+  "sort":"1"
+ },
+ {
+  "title":"Card Holders",
+  "link":"men-cardholders",
+  "target":"",
+  "class":"men-cardholders",
+  "name":"men-cardholders",
+  "link_type":"men-accessories",
+  "sort":"1"
+ },
+ {
+  "title":"Passport Holders",
+  "link":"men-passportholders",
+  "target":"",
+  "class":"men-passportholders",
+  "name":"men-passportholders",
+  "link_type":"men-accessories",
+  "sort":"1"
+ }
+]

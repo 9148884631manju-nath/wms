@@ -1,0 +1,26 @@
+<div class="bg-brandCard border border-brandCardBorder rounded-xl overflow-hidden hover:shadow-lg transition duration-300 flex flex-col justify-between">
+  <div>
+    <div class="relative bg-slate-200 aspect-square flex items-center justify-center overflow-hidden">
+      <span class="text-slate-400 font-bold text-4xl select-none" onclick="window.location='product-details.php'"><img src="XmainTitle" width="100%" /></span>
+      
+      <span class="absolute top-3 left-3 bg-accentGreen text-white text-xs font-black px-2.5 py-1 rounded shadow-sm">XSpecial</span>
+      
+    </div>
+    <div class="p-5">
+      <span class="text-xs text-brandMutedText uppercase font-bold tracking-wider">Xcategory</span>
+      <h3 class="text-lg font-bold text-brandDarkText mt-1" onclick="window.location='product-details.php'">Xproduct</h3>
+      <p class="text-accentOrange font-extrabold text-xl mt-2">Xprice</p>
+    </div>
+  </div>
+  <div class="p-5 pt-0">
+    <button 
+      hx-post="XaddToCartURL" 
+      hx-vals='XproductID'
+      hx-target="#cart-badge"
+      hx-swap="outerHTML"
+      class="w-full bg-accentGreen hover:bg-accentGreenHover text-white font-bold py-2.5 rounded-lg transition flex items-center justify-center gap-2 shadow-sm">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+      Add to Cart
+    </button>
+  </div>
+</div>

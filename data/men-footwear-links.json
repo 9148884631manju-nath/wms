@@ -1,0 +1,29 @@
+[
+ {
+  "title":"Formal Shoes",
+  "link":"men-formalshoes",
+  "target":"",
+  "class":"men-formalshoes",
+  "name":"men-formalshoes",
+  "link_type":"men-footwear",
+  "sort":"1"
+ },
+ {
+  "title":"Casual Shoes",
+  "link":"men-casualshoes",
+  "target":"",
+  "class":"men-casualshoes",
+  "name":"men-casualshoes",
+  "link_type":"men-footwear",
+  "sort":"1"
+ },
+ {
+  "title":"Sneekers",
+  "link":"men-sneekers",
+  "target":"",
+  "class":"men-sneekers",
+  "name":"men-sneekers",
+  "link_type":"men-footwear",
+  "sort":"1"
+ }
+]

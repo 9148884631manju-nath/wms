@@ -1,0 +1,47 @@
+[
+   {
+    "title":"Foot Wear",
+    "link":"women-footwear",
+    "target":"",
+    "class":"women-footwear",
+    "name":"Women-FootWear_Link",
+    "link_type":"women",
+    "sort":"1"
+   },
+   {
+    "title":"Wallets",
+    "link":"women-wallets",
+    "target":"",
+    "class":"women-wallets",
+    "name":"Women-Wallets_Link",
+    "link_type":"women",
+    "sort":"1"
+   },
+   {
+    "title":"Belts",
+    "link":"women-belts",
+    "target":"",
+    "class":"women-belts",
+    "name":"Women-Belts_Link",
+    "link_type":"women",
+    "sort":"1"
+   },
+   {
+    "title":"Hand Bags",
+    "link":"women-handbags",
+    "target":"",
+    "class":"women-handbags",
+    "name":"Women-HandBags_Link",
+    "link_type":"women",
+    "sort":"1"
+   },
+   {
+    "title":"Jewellery",
+    "link":"women-jewellery",
+    "target":"",
+    "class":"women-jewellery",
+    "name":"Women-Jewellery_Link",
+    "link_type":"women",
+    "sort":"1"
+   }
+  ]

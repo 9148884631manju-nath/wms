@@ -1,0 +1,18 @@
+{
+ "uthwh":{
+     "product_image":"images/product.png",
+     "product_category":"unisex",
+     "product_main_title":"Tactical Heavyweight Hoodie",
+     "product_price":"89.00",
+     "product_expose":"hot",
+     "product_id":"uthwh"
+    },
+ "uucj":{
+     "product_image":"images/product.png",
+     "product_category":"unisex",
+     "product_main_title":"Utility Cargo Joggers",
+     "product_price":"89.00",
+     "product_expose":"",
+     "product_id":"uucj"
+    }
+}

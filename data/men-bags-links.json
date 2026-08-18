@@ -1,0 +1,38 @@
+[
+ {
+  "title":"Hand Bags",
+  "link":"men-handbags",
+  "target":"",
+  "class":"men-handbags",
+  "name":"men-handbags",
+  "link_type":"men-bags",
+  "sort":"1"
+ },
+ {
+  "title":"Hand Bags",
+  "link":"men-handbags",
+  "target":"",
+  "class":"men-handbags",
+  "name":"men-handbags",
+  "link_type":"men-bags",
+  "sort":"1"
+ },
+ {
+  "title":"Tolieerits Bags",
+  "link":"men-Tolieeritsbags",
+  "target":"",
+  "class":"men-Tolieeritsbags",
+  "name":"men-Tolieeritsbags",
+  "link_type":"men-bags",
+  "sort":"1"
+ },
+ {
+  "title":"Laptop Bags",
+  "link":"men-laptopbags",
+  "target":"",
+  "class":"men-laptopbags",
+  "name":"men-laptopbags",
+  "link_type":"men-bags",
+  "sort":"1"
+ }
+]
