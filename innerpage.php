@@ -50,7 +50,7 @@ $pagehead= "Products";
       $theme="subcategory_theme_admin";
       ?>
       <!-- ADD NEW CATEGORY CARD -->
-      <button hx-get="admin-cat-curd.php?gg=add"
+      <button hx-get="admin-cat-curd.php?gg=addform&par=<?= $page ?>"
               hx-target="#modal-container"
               hx-swap="innerHTML"
               class="group relative block h-64 w-full rounded-2xl border-2 border-dashed border-slate-300 hover:border-orange-500 bg-slate-50/50 hover:bg-orange-50/30 transition-all duration-300 flex flex-col items-center justify-center gap-3 text-center p-6 cursor-pointer">

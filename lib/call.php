@@ -47,6 +47,48 @@ function viewtitles($filePath,$targetSheetName){
   return $adminData;
 }
 
+function addnewrecord($filePath,$targetSheetName,$data){
+    $res="";
+    try {
+            $spreadsheet = IOFactory::load($filePath);
+            $sheet = $spreadsheet->getSheetByName($targetSheetName);
+            $nextRow = $sheet->getHighestRow() + 1;
+
+            $sheet->fromArray($data, null, 'A' . $nextRow);
+
+            // 5. Save changes
+            $writer = IOFactory::createWriter($spreadsheet, 'Xlsx');
+            $writer->save($filePath);
+            $res= "Added";
+
+        } catch (\Exception $e) {
+            $res= $e->getMessage();
+        }
+    return $res;
+
+}
+
+function deleterecord($filePath,$targetSheetName,$row){
+    $res="";
+    try {
+            $spreadsheet = IOFactory::load($filePath);
+            $sheet = $spreadsheet->getSheetByName($targetSheetName);
+            $nextRow = $sheet->getHighestRow() + 1;
+
+            $sheet->removeRow($row, 1);
+
+            // 3. Save changes
+            $writer = IOFactory::createWriter($spreadsheet, 'Xlsx');
+            $writer->save($filePath);
+            $res= "Deleted";
+
+        } catch (\Exception $e) {
+            $res= $e->getMessage();
+        }
+    return $res;
+
+}
+
 function updateexcell($filePath,$targetSheetName,$targetColumnIndex,$targetRowIndex,$newValue){
     $res="";
     try {
