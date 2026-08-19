@@ -23,7 +23,7 @@
         $category_name= $_POST['category_name'];
         $category_link= $_POST['category_link'];
         //var_dump($_FILES);
-        $category_image = $_FILES['category_image']['name'];
+        
         
 
         if(file_exists($inv.$par.".xlsx")){
@@ -38,6 +38,7 @@
         if(isset($dat[$category_id])){
          echo "Duplicate Record of ".$category_id;
         }else{
+         $category_image = $_FILES['category_image']['name'];
          if(move_uploaded_file($_FILES['category_image']['tmp_name'],"images/".$category_id.".jpg"))
          {
           $res= addnewrecord($inv.$par.".xlsx","Sheet1",$data);
@@ -163,12 +164,18 @@
          $targetSheetName="Sheet1";
          $targetColumnIndex=$nx["Title"];
          $newValue= $category_name;
-         $res = updateexcell($filePath,$targetSheetName,$targetColumnIndex,$targetRowIndex,$newValue);
 
-         if($res=="Updated"){
-          ?><script>window.location.reload();</script><?php
+         if(move_uploaded_file($_FILES['category_image']['tmp_name'],"images/".$id.".jpg"))
+         {
+          $res = updateexcell($filePath,$targetSheetName,$targetColumnIndex,$targetRowIndex,$newValue);
+
+          if($res=="Updated"){
+           ?><script>window.location.reload();</script><?php
+          }else{
+           echo $res." - ";
+          }
          }else{
-          echo $res." - ";
+          echo "Image Not Uploaded to Images Folder";
          }
 
         }else{}
@@ -194,6 +201,7 @@
     <!-- Edit Form (HTMX Supported) -->
     <form hx-post="admin-cat-curd.php?gg=save&id=<?= $id ?>&par=<?= $par ?>" 
           hx-target="#modal-container" 
+          hx-encoding="multipart/form-data"
           hx-swap="innerHTML"
           class="space-y-4">
       
@@ -217,7 +225,14 @@
                class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition text-sm text-slate-900">
       </div>
 
-      
+      <!-- FILE Upload -->
+      <div>
+        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Image</label>
+        <input type="file" 
+               name="category_image" 
+               required 
+               class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition text-sm text-slate-900">
+      </div>
 
       <!-- Action Buttons -->
       <div class="flex items-center justify-end gap-3 pt-4 border-t border-slate-100 mt-6">
