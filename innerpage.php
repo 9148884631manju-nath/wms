@@ -47,7 +47,44 @@ $pagehead= "Products";
    
    if(file_exists($inv.$page.".xlsx")){
     $readLinks =getls($inv,$page);
-    ?><div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6"><?php
+
+    
+    ?><div class="w-full inline-flex uppercase flex-wrap  gap-2 bg-white p-2 border-b-2 border-orange-500 pb-2">
+        <?php $nl=0;
+          $spl=explode("_",$page);
+          $jj=array();
+          for($i=0;$i<count($spl);$i+=1){
+            $nl=$i-1;
+            if($nl>-1){$ll.=$spl[$nl].="_";}else{$ll="";}
+            $jj[]=array(
+              "title"=>$spl[$i],
+              "link"=>$ll.$spl[$i]
+            );
+          }
+          $jj=json_encode($jj); $jj=json_decode($jj);
+          echo dataToTemplate(
+              $jj,
+              "templates/hyperlink_3.html",
+              [
+                ["text","title","Xtitle","",""],
+                ["text","link","Xlink","","","?page=",""],
+              ]
+            );
+        ?>
+      </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+      
+      <style>.navlinks a{display:block;padding:0px 8px}</style>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">Products</div>
+
+    <br/><br/><br/><br/>
+    <div class="mb-8 text-center md:text-left">
+    <h2 class="text-2xl font-bold tracking-tight text-gray-900 uppercase">Shop By Category</h2>
+    <p class="text-sm text-gray-500 mt-1">Explore our latest collections curated for modern urban style.</p>
+  </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6"><?php
     
     if(isset($_SESSION['nimda'])=="ko"){
       $theme="subcategory_theme_admin";
@@ -109,20 +146,10 @@ $pagehead= "Products";
    }
    ?>
   
-</section>
-
-<?php
-
-
-
-
-
-?>
-<!-- CATEGORIES SECTION -->
-<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<br/><br/><br/><br/><br/>
   <!-- Section Header -->
   <div class="mb-8 text-center md:text-left">
-    <h2 class="text-2xl font-bold tracking-tight text-gray-900 uppercase">Shop By Category</h2>
+    <h2 class="text-2xl font-bold tracking-tight text-gray-900 uppercase">Shop By Gender</h2>
     <p class="text-sm text-gray-500 mt-1">Explore our latest collections curated for modern urban style.</p>
   </div>
 
