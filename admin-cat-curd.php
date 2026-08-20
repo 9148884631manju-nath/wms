@@ -42,10 +42,25 @@
          if(move_uploaded_file($_FILES['category_image']['tmp_name'],"images/".$category_id.".jpg"))
          {
           $res= addnewrecord($inv.$par.".xlsx","Sheet1",$data);
-          if($res=="Added"){
-           ?><script>window.location.reload();</script><?php
+          if(file_exists($inv.$category_id.".xlsx")){
+            $mres="Created";
           }else{
-           echo $res;
+            $arow=array(
+              "A1"=>"titleid",
+              "B1"=>"title",
+              "C1"=>"link",
+              "D1"=>"scat",
+              "E1"=>"image"
+            );
+            $arow=json_encode($arow); $arow=json_decode($arow);
+            $mres=createnewexcellfile($inv.$category_id,$arow);
+          } 
+          if($res=="Added" and $mres=="Created"){           
+          
+          ?><script>window.location.reload();</script><?php
+           
+          }else{
+           echo $res.$mres;
           }
          }else{echo "Image Not Uploaded to Images";}
         }
@@ -192,7 +207,7 @@
         <span class="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
         Category Management
       </div>
-      <h2 class="text-2xl font-black text-slate-900 uppercase tracking-tight">Update Category</h2>
+      <h2 class="text-2xl font-black text-slate-900 uppercase tracking-tight">Update Category</h2><?= $id ?> 
     </div>
 
     <!-- Alert Response Container -->

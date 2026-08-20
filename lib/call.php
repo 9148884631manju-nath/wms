@@ -1,6 +1,8 @@
 <?php session_start(); error_reporting(6); require_once "inc.php";
 require_once 'vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 // CONFIG
 $res = "res/";
 $data = "data/";
@@ -35,6 +37,19 @@ function viewdata_col($filePath,$targetSheetName){
       $adminData["err"] = $e->getMessage();
   } 
   return $adminData;
+}
+
+function createnewexcellfile($fname,$data){
+    $spreadsheet = new Spreadsheet();
+    $sheet = $spreadsheet->getActiveSheet();
+    $sheet->setTitle('Sheet1');
+    foreach($data as $k=>$v){
+        $sheet->setCellValue($k, $v);
+    }
+    $writer = new Xlsx($spreadsheet);
+    $writer->save($fname.".xslx");
+
+    return "Created";
 }
 
 function viewtitles($filePath,$targetSheetName){
