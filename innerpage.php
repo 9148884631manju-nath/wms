@@ -1,14 +1,17 @@
 
 
 <?php
-if(file_exists($inv."categories.xlsx")){
- $catLinks = viewdata($inv."categories.xlsx","Sheet1");
+$mcat = isset($_REQUEST['mcat']) ? $_REQUEST['mcat'] : "categories";
+if(file_exists($inv.$mcat.".xlsx")){
+ 
+ $catLinks = viewdata($inv.$mcat.".xlsx","Sheet1");
+ //var_dump($catLinks);
  if(isset($catLinks[$page])){
- $pagehead=$catLinks[$page]["title"];
- $innertheme = "templates/header_section_2.html";
+    $pagehead=$catLinks[$page]["title"];
+    $innertheme = "templates/header_section_2.html";
  }else{
-  $pagehead=$page;
-  $innertheme ="templates/innerpageheader.html";
+    $pagehead=$page;
+    $innertheme ="templates/innerpageheader.html";
  }
   $headerSectioon=
   array(
@@ -76,23 +79,33 @@ $pagehead= "Products";
       <?php
     }else{
       $theme="subcategory_theme";
-    }
-    
+    }    
     echo dataToTemplate(
       $readLinks,
       "templates/".$theme.".html",
       [
         ["text","page","Xpage",$page,""],
         ["text","titleid","Xeid","",""],
-        ["text","Title","Xtitle","",""],
-        ["text","link","Xlink","",""],
+        ["text","title","Xtitle","",""], 
+        ["text","link","Xlink","","","","&mcat=$page"],
         ["text","scat","Xscat","-",""],
         ["text","titleid","Xidtitle","","",$images,".jpg"]
       ]
     );    
     ?></div><?php
    }else{
-   echo $page;
+      switch($page)
+      {
+        case "aboutus":
+            require_once "aboutus.html";
+          break;
+        case "contactus":
+            require_once "contactus.html";
+          break;
+        default:
+          echo $page;
+        break;
+      }
    }
    ?>
   

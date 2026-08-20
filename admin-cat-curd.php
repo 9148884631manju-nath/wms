@@ -19,14 +19,11 @@
      switch($gg){
       case "addnew":
         $par= $_REQUEST['par'];
-        $category_id= $_POST['category_id'];
-        $category_name= $_POST['category_name'];
-        $category_link= $_POST['category_link'];
-        //var_dump($_FILES);
+        $category_name= ltrim(rtrim($_POST['category_name']));
+        $nst = stringrep($category_name);
+        $category_id= $par."_".$nst;
+        $category_link= "?page=".$category_id; 
         
-        
-
-        if(file_exists($inv.$par.".xlsx")){
         $data=[
            $category_id,
            $category_name,
@@ -34,6 +31,11 @@
            "",
            "image"
         ];
+
+        //var_dump($data);
+
+        if(file_exists($inv.$par.".xlsx")){
+        
         $dat = viewdata($inv.$par.".xlsx","Sheet1");
         if(isset($dat[$category_id])){
          echo "Duplicate Record of ".$category_id;
@@ -94,14 +96,7 @@
           hx-swap="innerHTML"
           class="space-y-4">
       
-      <!-- CatID Name Field -->
-      <div>
-        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Category ID</label>
-        <input type="text" 
-               name="category_id" 
-               required 
-               class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition text-sm text-slate-900 font-semibold">
-      </div>
+      
        
       <!-- Category Name Field -->
       <div>
@@ -110,15 +105,6 @@
                name="category_name" 
                required 
                class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition text-sm text-slate-900 font-semibold">
-      </div>
-
-      <!-- Subtitle / Tag Field -->
-      <div>
-        <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1.5">Link</label>
-        <input type="text" 
-               name="category_link" 
-               required 
-               class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:ring-2 focus:ring-orange-500 focus:border-transparent outline-none transition text-sm text-slate-900">
       </div>
 
       <!-- FILE Upload -->

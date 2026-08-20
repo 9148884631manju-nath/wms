@@ -38,7 +38,15 @@ function viewdata_col($filePath,$targetSheetName){
   } 
   return $adminData;
 }
-
+function stringrep($val){
+    $val=strtolower(ltrim(rtrim($val)));
+    $sc = array("/"," / ","'","' "," '","&"," & ","-","- "," -","#","# "," #","%","(",")","[","]");
+    $xc = array("","","","","","","","","","","","","","","","","","");
+    $fc = str_replace($sc,$xc,$val);
+    $fc = str_replace("  "," ",$fc);
+    $nc = str_replace(" ","",$fc);
+    return $nc;
+}
 function createnewexcellfile($fname,$data){
     $spreadsheet = new Spreadsheet();
     $sheet = $spreadsheet->getActiveSheet();
@@ -47,7 +55,7 @@ function createnewexcellfile($fname,$data){
         $sheet->setCellValue($k, $v);
     }
     $writer = new Xlsx($spreadsheet);
-    $writer->save($fname.".xslx");
+    $writer->save($fname.".xlsx");
 
     return "Created";
 }
